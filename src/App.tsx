@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Island2 from "./components/Island-v2";
+import Island from "./components/Island";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
             alt=""
           />
           <Island2 />
+          <Island />
         {/* </motion.div> */}
         {/* <motion.div
           transition={{ duration: 0.25 }}

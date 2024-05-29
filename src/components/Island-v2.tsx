@@ -3,17 +3,17 @@ import "../App.css"
 
 export default function Island2() {
     return (
-      <div className=" flex flex-row w-full justify-center items-start place-items-center fixed h-[100vh] pt-[1.5rem] sm:max-2xl:pt-[5.05rem]">
+      <div className=" hidden fixed sm:max-2xl:flex flex-row w-full justify-center items-start place-items-center h-[100vh] pt-[1.5rem] sm:max-2xl:pt-[5.05rem]">
         <motion.div
           transition={{ duration: 0.25 }}
-          whileHover={{ scale: 2.1, y: 10 }}
+          whileHover={{ scale: 2.1, y: 40 }}
           initial={{ scale: 1 }}
           className="
-          island cursor-pointer group hover:rounded-4xl px-2 rounded-full py-1 items-center w-[100px] sm:max-2xl:w-[310px] h-[30px] sm:max-2xl:h-[80px] sm:max-2xl:hover:-translate-y-52 -ml-[0.15rem] bg-black justify-between flex flex-row"
+          island cursor-pointer group hover:h-[100px]  hover:rounded-4xl px-2 rounded-full py-1 items-center w-[80px] sm:max-2xl:w-[310px] h-[20px] sm:max-2xl:h-[80px] sm:max-2xl:hover:-translate-y-52 -ml-[0.15rem] bg-black justify-between flex flex-row"
         >
           <div>
             <img
-              className=" w-3 h-3 sm:max-2xl:w-8 sm:max-2xl:h-8"
+              className=" w-3 h-3 sm:max-2xl:w-12 sm:max-2xl:h-8"
               src="./airpods.png"
               alt="airpods"
             />

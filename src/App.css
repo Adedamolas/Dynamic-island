@@ -20,3 +20,24 @@ flex-grow: 0;
 .island:hover{
   transform: translateY(300px);
 }
+
+.mobile_island{
+  padding-top: 0;
+}
+.mobile_island .island{
+  background: black;
+  transition: all ease-in-out 450ms;
+}
+.mobile_island .island:hover{
+  width: 10rem;
+  height: 3rem;
+}
+
+
+
+
+
+
+
+
+
