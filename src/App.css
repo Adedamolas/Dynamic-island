@@ -1,0 +1,22 @@
+#root {
+  background: #5e2a2a;
+}
+.status_bar{
+  /* Group 13 */
+
+width: 48.01px;
+height: 48.01px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+.island{
+  transform: none;
+}
+.island:hover{
+  transform: translateY(300px);
+}
