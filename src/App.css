@@ -14,12 +14,12 @@ order: 0;
 flex-grow: 0;
 
 }
-.island{
+/* .island{
   transform: none;
 }
 .island:hover{
   transform: translateY(300px);
-}
+} */
 
 .mobile_island{
   padding-top: 0;
@@ -29,10 +29,15 @@ flex-grow: 0;
   transition: all ease-in-out 450ms;
 }
 .mobile_island .island:hover{
-  width: 10rem;
-  height: 3rem;
+  width: 13rem;
+  height: 3.5rem;
 }
 
+@media screen and (max-width: 1000px) {
+  .mobile_island{
+    background: red;
+  }
+}
 
 
 

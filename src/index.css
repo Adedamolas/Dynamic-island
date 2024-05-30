@@ -5,6 +5,7 @@
 @layer base {
   body {
     font-family: Syne;
+    background: black;
   }
   @font-face {
     font-family: Syne;
