@@ -1,0 +1,8 @@
+/* src/assets/fonts.css */
+@font-face {
+  font-family: "Vergilia";
+  src: url("./assets/fonts/Vergilia-mL6aa.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

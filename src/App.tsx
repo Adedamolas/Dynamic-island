@@ -1,53 +1,80 @@
 import { motion } from "framer-motion";
-import Island2 from "./components/Island-v2";
-import Island from "./components/Island";
 
 function App() {
   return (
     <>
-      <motion.div className=" bg-black flex flex-row justify-center pt-[5.5rem]">
-        {/* <motion.div animate={{ y: 0 }} initial={{ y: -100 }}> */}
-          <img
-            className=" w-[80vw] relative"
-            src="./iPhone14ProMax.png"
-            alt=""
-          />
-          <Island2 />
-          <Island />
-        {/* </motion.div> */}
-        {/* <motion.div
-          transition={{ duration: 0.25 }}
-          whileHover={{ scale: 2.1, y: 60 }}
-          initial={{scale: 1}}
-          className=" min-[1000px]:w-100px min-[1000px]:h-[50px] cursor-pointer group hover:h-28 hover:rounded-4xl px-2 rounded-full py-7 items-center fixed top-[23.55%] right-[38.6%] w-[310px] h-[85px] bg-black justify-between flex flex-row"
-        >
-          <div>
-            <img
-              className=" w-12 h-6 group-hover:h-7"
-              src="./airpods.png"
-              alt="airpods"
-            />
+      <div className="bg-white min-h-screen">
+        <div className="bg-[url('/posthearts.svg')] bg-contain bg-top bg-no-repeat min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+          <div className="text-center w-full max-w-lg mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="flex flex-row w-full justify-center py-4"
+            >
+              <div className="p-2 bg-gray-200 rounded-lg flex flex-row gap-2 items-center">
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#0008ff"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-heart-icon lucide-heart"
+                  >
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                  </svg>
+                </span>
+                <p className="text-sm sm:text-base">Welcome</p>
+              </div>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-2 text-black font-vergilia"
+            >
+              Create memories
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mb-6 text-sm sm:text-base md:text-lg"
+            >
+              Bridging hearts one poetic gesture at a time.
+            </motion.p>
+
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-blue-600 hover:bg-blue-700 w-full sm:w-3/4 md:max-w-md text-white font-medium py-3 sm:py-4 md:py-5 px-8 sm:px-10 rounded-full text-base sm:text-lg mb-6 sm:mb-8"
+            >
+              Let's go
+            </motion.button>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="text-xs sm:text-sm text-gray-600 max-w-full text-center mt-4"
+            >
+              By using PoeticGestures, you agree to our{" "}
+              <span className="font-bold">Terms of Service</span> and{" "}
+              <span className="font-bold">Privacy Policy</span>.
+            </motion.p>
           </div>
-          <div className=" opacity-0 group-hover:opacity-100 transition-opacity duration-150 ease-in-out">
-            <h4 className=" text-gray-500">Connected</h4>
-            <h2>
-              <h2 className=" text-white">Damola's Airpods</h2>
-            </h2>
-          </div>
-          <div>
-            <img
-              className=" w-10 h-10 group-hover:hidden ease-in-out duration-100"
-              src="./status_null.svg"
-              alt="status"
-            />
-            <img
-              className=" w-10 h-10 hidden group-hover:block ease-in-out duration-100"
-              src="./status.svg"
-              alt="status"
-            />
-          </div>
-        </motion.div> */}
-      </motion.div>
+        </div>
+      </div>
     </>
   );
 }
