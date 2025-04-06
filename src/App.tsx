@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router";
 import PoetryGenerator from "./components/PoetryGenerator";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/create-poem" element={<PoetryGenerator />} />
       </Routes>
+      <Analytics />
     </Router>
   );
 }
