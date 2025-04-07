@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Header from "./Header";
 import ProgressBar from "./ProgressBar";
 import FormStep from "./FormStep";
+import ThemeSelectionStep from "./ThemeSelectionStep";
 import LoadingStep from "./LoadingStep";
 import ResultStep from "./ResultStep";
 
@@ -31,6 +32,7 @@ const PoetryGenerator: React.FC<PoetryGeneratorProps> = ({ onBack }) => {
     specialMemories: "",
     insideJokes: "",
   });
+  const [selectedTheme, setSelectedTheme] = useState<string>("classic");
   const [generatedPoem, setGeneratedPoem] = useState<string>("");
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -57,6 +59,21 @@ const PoetryGenerator: React.FC<PoetryGeneratorProps> = ({ onBack }) => {
     setStep(2);
   };
 
+  // Move to theme selection step
+  const moveToThemeSelection = (): void => {
+    setStep(2);
+  };
+
+  // Move to poem generation step
+  const moveToGeneration = (): void => {
+    setStep(3);
+  };
+
+  // Return to previous step
+  const goBack = (): void => {
+    setStep((prevStep) => prevStep - 1);
+  };
+
   // Generate poem function with type safety
   const generatePoem = (): void => {
     setIsGenerating(true);
@@ -75,7 +92,7 @@ const PoetryGenerator: React.FC<PoetryGeneratorProps> = ({ onBack }) => {
 
         setGeneratedPoem(poems[formData.tone]);
         setIsGenerating(false);
-        setStep(3);
+        setStep(4);
       }, 2000);
     } catch (err) {
       setError("There was a problem generating your poem. Please try again.");
@@ -88,7 +105,7 @@ const PoetryGenerator: React.FC<PoetryGeneratorProps> = ({ onBack }) => {
   };
 
   // Calculate progress percentage based on current step
-  const progressPercentage = ((step - 1) / 2) * 100;
+  const progressPercentage = ((step - 1) / 3) * 100;
 
   return (
     <div className="bg-white min-h-screen">
@@ -101,7 +118,7 @@ const PoetryGenerator: React.FC<PoetryGeneratorProps> = ({ onBack }) => {
           {/* Steps indicator and progress bar */}
           <div className="mb-8">
             <div className="flex justify-between mb-2 px-4">
-              {[1, 2, 3].map((stepNumber) => (
+              {[1, 2, 3, 4].map((stepNumber) => (
                 <div
                   key={stepNumber}
                   className={`w-8 h-8 rounded-full flex items-center justify-center ${
@@ -121,18 +138,29 @@ const PoetryGenerator: React.FC<PoetryGeneratorProps> = ({ onBack }) => {
               formData={formData}
               handleInputChange={handleInputChange}
               handleSubmit={handleSubmit}
+              onContinue={moveToThemeSelection}
             />
           )}
           {step === 2 && (
+            <ThemeSelectionStep
+              selectedTheme={selectedTheme}
+              setSelectedTheme={setSelectedTheme}
+              formData={formData}
+              onContinue={moveToGeneration}
+              onBack={goBack}
+            />
+          )}
+          {step === 3 && (
             <LoadingStep
               isGenerating={isGenerating}
               error={error}
               generatePoem={generatePoem}
             />
           )}
-          {step === 3 && (
+          {step === 4 && (
             <ResultStep
               generatedPoem={generatedPoem}
+              selectedTheme={selectedTheme}
               startOver={startOver}
               onBack={onBack}
             />
